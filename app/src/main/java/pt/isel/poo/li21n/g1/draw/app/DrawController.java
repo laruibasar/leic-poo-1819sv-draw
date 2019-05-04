@@ -3,7 +3,7 @@ package pt.isel.poo.li21n.g1.draw.app;
 import android.app.Activity;
 import android.os.Bundle;
 
-import java.io.File;
+import pt.isel.poo.li21n.g1.draw.app.model.Figure;
 
 public class DrawController extends Activity {
     protected String FILE = "draw.txt";

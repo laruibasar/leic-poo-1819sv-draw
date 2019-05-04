@@ -11,13 +11,17 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import pt.isel.poo.li21n.g1.draw.app.DrawController;
+import pt.isel.poo.li21n.g1.draw.app.view.DrawView;
+
 public class MainActivity extends AppCompatActivity {
+
+    DrawController ctrl = new DrawController();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main); /* we choose to go programming crazy mode */
-
 
         /* layout for storing the buttons and radio group containers */
         final LinearLayout commands = new LinearLayout(this);
@@ -115,7 +119,11 @@ public class MainActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT
         );
+
+        DrawView drawView = new DrawView(ctrl);
+
         layoutCanvas.setLayoutParams(layoutCanvasParams);
+        layoutCanvas.addView(drawView);
 
         /* main container for layouts */
         final LinearLayout layout = new LinearLayout(this);
