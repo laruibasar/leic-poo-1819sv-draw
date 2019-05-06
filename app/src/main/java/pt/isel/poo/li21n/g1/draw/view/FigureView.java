@@ -1,11 +1,11 @@
-package pt.isel.poo.li21n.g1.draw.app.view;
+package pt.isel.poo.li21n.g1.draw.view;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 
-import pt.isel.poo.li21n.g1.draw.app.model.Figure;
-import pt.isel.poo.li21n.g1.draw.app.model.Point;
+import pt.isel.poo.li21n.g1.draw.model.Figure;
+import pt.isel.poo.li21n.g1.draw.model.Point;
 
 abstract class FigureView {
     final protected Paint paint;

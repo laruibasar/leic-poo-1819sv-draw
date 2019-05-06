@@ -1,12 +1,12 @@
-package pt.isel.poo.li21n.g1.draw.app.view;
+package pt.isel.poo.li21n.g1.draw.view;
 
 import android.graphics.Canvas;
 import android.view.MotionEvent;
 import android.view.View;
 
-import pt.isel.poo.li21n.g1.draw.app.DrawController;
-import pt.isel.poo.li21n.g1.draw.app.model.DrawModel;
-import pt.isel.poo.li21n.g1.draw.app.model.Figure;
+import pt.isel.poo.li21n.g1.draw.DrawController;
+import pt.isel.poo.li21n.g1.draw.model.DrawModel;
+import pt.isel.poo.li21n.g1.draw.model.Figure;
 
 public class DrawView extends View {
     private FigureView current;

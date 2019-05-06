@@ -11,8 +11,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import pt.isel.poo.li21n.g1.draw.app.DrawController;
-import pt.isel.poo.li21n.g1.draw.app.view.DrawView;
+import pt.isel.poo.li21n.g1.draw.DrawController;
+import pt.isel.poo.li21n.g1.draw.view.DrawView;
 
 public class MainActivity extends AppCompatActivity {
 

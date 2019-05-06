@@ -1,12 +1,12 @@
-package pt.isel.poo.li21n.g1.draw.app;
+package pt.isel.poo.li21n.g1.draw;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
-import pt.isel.poo.li21n.g1.draw.app.model.DrawModel;
-import pt.isel.poo.li21n.g1.draw.app.model.Figure;
-import pt.isel.poo.li21n.g1.draw.app.view.DrawView;
+import pt.isel.poo.li21n.g1.draw.model.DrawModel;
+import pt.isel.poo.li21n.g1.draw.model.Figure;
+import pt.isel.poo.li21n.g1.draw.view.DrawView;
 
 public class DrawController extends Activity {
     private String FILE = "draw.txt";

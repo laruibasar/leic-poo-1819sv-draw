@@ -1,9 +1,9 @@
-package pt.isel.poo.li21n.g1.draw.app.view;
+package pt.isel.poo.li21n.g1.draw.view;
 
 import android.graphics.Canvas;
 
-import pt.isel.poo.li21n.g1.draw.app.model.Figure;
-import pt.isel.poo.li21n.g1.draw.app.model.Point;
+import pt.isel.poo.li21n.g1.draw.model.Figure;
+import pt.isel.poo.li21n.g1.draw.model.Point;
 
 class LineView extends FigureView {
     LineView(Figure f) {

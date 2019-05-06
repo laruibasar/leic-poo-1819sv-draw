@@ -1,4 +1,4 @@
-package pt.isel.poo.li21n.g1.draw.app.model;
+package pt.isel.poo.li21n.g1.draw.model;
 
 public class Point {
     private int x;
