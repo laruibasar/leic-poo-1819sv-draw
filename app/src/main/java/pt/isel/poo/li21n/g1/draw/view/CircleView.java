@@ -1,0 +1,18 @@
+package pt.isel.poo.li21n.g1.draw.app.view;
+
+import android.graphics.Canvas;
+
+import pt.isel.poo.li21n.g1.draw.app.model.Figure;
+import pt.isel.poo.li21n.g1.draw.app.model.Point;
+
+class CircleView extends FigureView {
+    CircleView(Figure f) {
+        super(f);
+    }
+
+    @Override
+    void draw(Canvas c) {
+        Point center = figure.getStart();
+        c.drawCircle(center.getX(), center.getY(), figure.getRadius(), paint);
+    }
+}

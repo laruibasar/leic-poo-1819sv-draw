@@ -16,12 +16,13 @@ import pt.isel.poo.li21n.g1.draw.app.view.DrawView;
 
 public class MainActivity extends AppCompatActivity {
 
-    DrawController ctrl = new DrawController();
+    DrawController ctrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main); /* we choose to go programming crazy mode */
+        ctrl = new DrawController(this);
 
         /* layout for storing the buttons and radio group containers */
         final LinearLayout commands = new LinearLayout(this);
