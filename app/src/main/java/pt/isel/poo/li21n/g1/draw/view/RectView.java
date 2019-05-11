@@ -13,13 +13,13 @@ class RectView extends FigureView {
     @Override
     void draw(Canvas c) {
         Point sideLeft = figure.getStart();
-        Point sideTop = figure.getTop();
-        Point sideRight = figure.getRight();
-        Point sideBottom = figure.getEnd();
+        //Point sideTop = figure.getTop();
+        //Point sideRight = figure.getRight();
+        //Point sideBottom = figure.getEnd();
 
-        c.drawLine(sideLeft.getX(), sideLeft.getY(), sideTop.getX(), sideTop.getY(), paint);
-        c.drawLine(sideTop.getX(), sideTop.getY(), sideRight.getX(), sideRight.getY(), paint);
-        c.drawLine(sideRight.getX(), sideRight.getY(), sideBottom.getX(), sideBottom.getY(), paint);
-        c.drawLine(sideBottom.getX(), sideBottom.getY(), sideLeft.getX(), sideLeft.getY(), paint);
+        //c.drawLine(sideLeft.getX(), sideLeft.getY(), sideTop.getX(), sideTop.getY(), paint);
+        //c.drawLine(sideTop.getX(), sideTop.getY(), sideRight.getX(), sideRight.getY(), paint);
+        //c.drawLine(sideRight.getX(), sideRight.getY(), sideBottom.getX(), sideBottom.getY(), paint);
+        //c.drawLine(sideBottom.getX(), sideBottom.getY(), sideLeft.getX(), sideLeft.getY(), paint);
     }
 }

@@ -13,6 +13,6 @@ class CircleView extends FigureView {
     @Override
     void draw(Canvas c) {
         Point center = figure.getStart();
-        c.drawCircle(center.getX(), center.getY(), figure.getRadius(), paint);
+        //c.drawCircle(center.getX(), center.getY(), figure.getRadius(), paint);
     }
 }

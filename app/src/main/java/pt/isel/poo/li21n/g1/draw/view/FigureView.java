@@ -17,8 +17,7 @@ abstract class FigureView {
         paint.setColor(Color.BLACK);
     }
 
-    void draw(Canvas c) {
-    }
+    void draw(Canvas c) { }
 
     FigureView newInstance(Figure f) {
         switch (f.getClass().getName()) {

@@ -13,8 +13,8 @@ class LineView extends FigureView {
     @Override
     void draw(Canvas c) {
         Point start = figure.getStart();
-        Point end = figure.getEnd();
+        //Point end = figure.getEnd();
 
-        c.drawLine(start.getX(), start.getY(), end.getX(), end.getY(), paint);
+        //c.drawLine(start.getX(), start.getY(), end.getX(), end.getY(), paint);
     }
 }
