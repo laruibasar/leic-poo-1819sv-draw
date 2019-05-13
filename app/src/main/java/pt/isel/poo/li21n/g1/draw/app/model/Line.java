@@ -3,16 +3,19 @@ package pt.isel.poo.li21n.g1.draw.app.model;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class Circle extends Figure {
+public class Line extends Figure {
 
-    public char letter = 'C';
-    private int radius;
+    public char letter = 'L';
 
-    public Circle(int x, int y){
-        super(x,y);
+
+    private Point finish;
+
+    public Line(int x, int y){
+        super(x, y);
+        finish = new Point(x,y);
     }
 
-    public Circle(){
+    public Line(){
 
     }
 
@@ -26,15 +29,15 @@ public class Circle extends Figure {
 
     public void save(PrintWriter out){
         super.save(out);
-        out.print(" |" + radius + "|");
+        out.print(" (" + finish.getX() + "," + finish.getY() + ")");
     }
 
     public void setEnd(int x, int y){
-
+        finish.set(x,y);
     }
 
-    public int getRadius(){
-        return this.radius;
+    public Point getEnd(){
+        return finish;
     }
 
 }
