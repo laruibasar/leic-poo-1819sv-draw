@@ -7,6 +7,7 @@ public class Circle extends Figure {
 
     public final char letter = 'C';
     private int radius;
+    protected final Point end = new Point();
 
     public Circle(int x, int y){
         super(x,y);
@@ -32,10 +33,11 @@ public class Circle extends Figure {
 
     @Override
     public Point getEnd() {
-        return null;
+        return this.end;
     }
 
     public void setEnd(int x, int y){
+        this.end.set(x,y);
         int ex = Math.abs(this.start.getX() - x);
         int ey = Math.abs(this.start.getY() - y);
         this.radius = (int) Math.sqrt((double) ((ex * ex) + (ey * ey)));
