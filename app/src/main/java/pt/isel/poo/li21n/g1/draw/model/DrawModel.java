@@ -1,7 +1,5 @@
 package pt.isel.poo.li21n.g1.draw.model;
 
-import androidx.annotation.NonNull;
-
 import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.Scanner;
