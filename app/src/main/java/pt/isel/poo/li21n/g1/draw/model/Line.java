@@ -1,18 +1,16 @@
-package pt.isel.poo.li21n.g1.draw.app.model;
+package pt.isel.poo.li21n.g1.draw.model;
 
 import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Line extends Figure {
 
-    public char letter = 'L';
-
-
-    private Point finish;
+    public final char letter = 'L';
+    protected Point end;
 
     public Line(int x, int y){
         super(x, y);
-        finish = new Point(x,y);
+        end = new Point(x,y);
     }
 
     public Line(){
@@ -28,16 +26,15 @@ public class Line extends Figure {
     }
 
     public void save(PrintWriter out){
-        super.save(out);
-        out.print(" (" + finish.getX() + "," + finish.getY() + ")");
+
     }
 
     public void setEnd(int x, int y){
-        finish.set(x,y);
+        this.end.set(x,y);
     }
 
     public Point getEnd(){
-        return finish;
+        return this.end;
     }
 
 }
