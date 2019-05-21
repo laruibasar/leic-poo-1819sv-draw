@@ -64,6 +64,7 @@ public class DrawView extends View {
                     break;
                 }
                 this.curr = FigureView.newInstance(f);
+                this.curr.elem.setEnd(x, y);
                 //this.views.add(this.curr);
                 invalidate();
                 return true;
