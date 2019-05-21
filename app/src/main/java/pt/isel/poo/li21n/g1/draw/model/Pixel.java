@@ -20,4 +20,9 @@ public class Pixel extends Figure {
         this.start.set(x, y);
     }
 
+    @Override
+    public Point getEnd() {
+        return this.start;
+    }
+
 }

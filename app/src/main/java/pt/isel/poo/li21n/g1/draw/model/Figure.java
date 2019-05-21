@@ -49,4 +49,6 @@ public abstract class Figure {
 
     public abstract void setEnd(int x, int y);
 
+    public abstract Point getEnd();
+
 }

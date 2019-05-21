@@ -30,6 +30,11 @@ public class Circle extends Figure {
 
     }
 
+    @Override
+    public Point getEnd() {
+        return null;
+    }
+
     public void setEnd(int x, int y){
         int ex = Math.abs(this.start.getX() - x);
         int ey = Math.abs(this.start.getY() - y);
