@@ -1,8 +1,9 @@
 package pt.isel.poo.li21n.g1.draw.model;
 
 public abstract class Figure {
-    private Point start;
-    private char letter;
+    private Point start, end;
+
+    protected char letter;
 
     protected Figure() {
         start = new Point();
@@ -17,6 +18,8 @@ public abstract class Figure {
     }
 
     public void setEnd(int x, int y) { }
+
+    public Point getEnd() { return end; }
 
     protected char getLetter() {
         return this.letter;

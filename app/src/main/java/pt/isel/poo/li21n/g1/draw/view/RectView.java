@@ -12,7 +12,7 @@ class RectView extends FigureView {
 
     @Override
     void draw(Canvas c) {
-        Point sideLeft = figure.getStart();
+        Point sideLeft = elem.getStart();
         //Point sideTop = figure.getTop();
         //Point sideRight = figure.getRight();
         //Point sideBottom = figure.getEnd();

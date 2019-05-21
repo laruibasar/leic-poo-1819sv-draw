@@ -5,22 +5,21 @@ import android.graphics.Color;
 import android.graphics.Paint;
 
 import pt.isel.poo.li21n.g1.draw.model.Figure;
-import pt.isel.poo.li21n.g1.draw.model.Point;
 
 abstract class FigureView {
     final protected Paint paint;
-    protected Figure figure;
+    protected Figure elem;
 
     FigureView(Figure f) {
-        this.figure = f;
+        this.elem = f;
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         paint.setColor(Color.BLACK);
     }
 
     void draw(Canvas c) { }
 
-    FigureView newInstance(Figure f) {
-        switch (f.getClass().getName()) {
+    static FigureView newInstance(Figure f) {
+        switch (f.getClass().getSimpleName()) {
             case "Line":
                 return new LineView(f);
             case "Rect":
