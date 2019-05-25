@@ -17,9 +17,12 @@ import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+import pt.isel.poo.li21n.g1.draw.model.Circle;
 import pt.isel.poo.li21n.g1.draw.model.DrawModel;
 import pt.isel.poo.li21n.g1.draw.model.Figure;
 import pt.isel.poo.li21n.g1.draw.model.Line;
+import pt.isel.poo.li21n.g1.draw.model.Pixel;
+import pt.isel.poo.li21n.g1.draw.model.Rect;
 import pt.isel.poo.li21n.g1.draw.view.DrawView;
 
 public class DrawController extends AppCompatActivity {
@@ -188,11 +191,11 @@ public class DrawController extends AppCompatActivity {
             case 'L':
                 return new Line(x, y);
             case 'R':
-                return new Line(x, y);
+                return new Rect(x, y);
             case 'P':
-                return new Line(x, y);
+                return new Pixel(x, y);
             case 'C':
-                return new Line(x, y);
+                return new Circle(x, y);
             default:
                 return null;
         }

@@ -3,10 +3,11 @@ package pt.isel.poo.li21n.g1.draw.view;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 import pt.isel.poo.li21n.g1.draw.DrawController;
@@ -22,18 +23,18 @@ public class DrawView extends View {
     public DrawView(DrawController ctrl) {
         super(ctrl);
         this.ctrl = ctrl;
+        this.views = new LinkedList<FigureView>();
 
         //paint = new Paint();
-        paint.setColor(Color.BLACK);
     }
 
     public void reloadModel(DrawModel model) {
         views.clear();
-        //Iterator it = model.iterator();
-        //while (it.hasNext()) {
-        //    Figure f = (Figure) it.next();
-        //    views.add(FigureView.newInstance(f));
-        //}
+        Iterator it = model.iterator();
+        while (it.hasNext()) {
+            Figure f = (Figure) it.next();
+            views.add(FigureView.newInstance(f));
+        }
         invalidate();
     }
 
@@ -43,11 +44,11 @@ public class DrawView extends View {
     public void onDraw(Canvas canvas) {
         canvas.drawColor(Color.argb(96, 0, 255, 0));
 
-        //for(FigureView f : views) {
-        //    f.draw(canvas);
-        //}
-        if (curr != null)
-            curr.draw(canvas);
+        for(FigureView f : views) {
+            f.draw(canvas);
+        }
+        //if (curr != null)
+        //    curr.draw(canvas);
     }
 
     @Override
@@ -64,17 +65,14 @@ public class DrawView extends View {
                     break;
                 }
                 this.curr = FigureView.newInstance(f);
-                this.curr.elem.setEnd(x, y);
-                //this.views.add(this.curr);
+                this.views.add(this.curr);
                 invalidate();
                 return true;
             case MotionEvent.ACTION_MOVE:
-                Log.d("DrawView", "MOVE x: " + x + " y: " + y);
                 curr.elem.setEnd(x, y);
                 invalidate();
                 return true;
             case MotionEvent.ACTION_UP:
-                Log.d("DrawView", "UP x: " + x + " y: " + y);
                 curr.elem.setEnd(x, y);
                 invalidate();
                 return true;

@@ -1,6 +1,8 @@
 package pt.isel.poo.li21n.g1.draw.view;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 
 import pt.isel.poo.li21n.g1.draw.model.Figure;
 import pt.isel.poo.li21n.g1.draw.model.Point;
@@ -12,14 +14,13 @@ class RectView extends FigureView {
 
     @Override
     void draw(Canvas c) {
-        Point sideLeft = elem.getStart();
-        //Point sideTop = figure.getTop();
-        //Point sideRight = figure.getRight();
-        //Point sideBottom = figure.getEnd();
+        paint.setColor(Color.BLACK);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(3f);
+        Point startPoint = elem.getStart();
+        Point endPoint = elem.getEnd();
 
-        //c.drawLine(sideLeft.getX(), sideLeft.getY(), sideTop.getX(), sideTop.getY(), paint);
-        //c.drawLine(sideTop.getX(), sideTop.getY(), sideRight.getX(), sideRight.getY(), paint);
-        //c.drawLine(sideRight.getX(), sideRight.getY(), sideBottom.getX(), sideBottom.getY(), paint);
-        //c.drawLine(sideBottom.getX(), sideBottom.getY(), sideLeft.getX(), sideLeft.getY(), paint);
+        c.drawRect((float) startPoint.getX(), (float) startPoint.getY(),
+                (float) endPoint.getX(), (float) endPoint.getY(), paint);
     }
 }
