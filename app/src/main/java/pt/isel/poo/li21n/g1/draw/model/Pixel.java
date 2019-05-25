@@ -1,11 +1,15 @@
 package pt.isel.poo.li21n.g1.draw.model;
 
+import java.io.PrintWriter;
+import java.util.Scanner;
+
 public class Pixel extends Figure {
 
-    public final char letter = 'P';
+    public final char LETTER = 'P';
 
-    public Pixel(int x, int y){
-        super(x,y);
+    public Pixel(int x, int y) {
+        super(x, y);
+        this.letter = LETTER;
     }
 
     public Pixel(){
@@ -16,6 +20,14 @@ public class Pixel extends Figure {
         return this.letter;
     }
 
+    public void load(Scanner in) {
+        super.load(in);
+    }
+
+    public void save(PrintWriter out) {
+        super.save(out);
+    }
+
     public void setEnd(int x, int y){
         this.start.set(x, y);
     }
@@ -23,6 +35,11 @@ public class Pixel extends Figure {
     @Override
     public Point getEnd() {
         return this.start;
+    }
+
+    @Override
+    public String toString() {
+        return this.letter + " " + start.toString();
     }
 
 }

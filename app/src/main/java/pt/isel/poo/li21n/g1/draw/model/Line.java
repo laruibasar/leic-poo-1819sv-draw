@@ -5,17 +5,19 @@ import java.util.Scanner;
 
 public class Line extends Figure {
 
-    public final char letter = 'L';
+    public final char LETTER = 'L';
     protected Point end;
 
-    public Line(int x, int y){
+    public Line(int x, int y) {
         super(x, y);
-        super.letter = 'L';
-        end = new Point(x,y);
+        this.letter = LETTER;
+        end = new Point(x, y);
     }
 
-    public Line(){
-
+    public Line() {
+        super(0, 0);
+        this.letter = LETTER;
+        end = new Point(0, 0);
     }
 
     protected char getLetter() {
@@ -23,11 +25,14 @@ public class Line extends Figure {
     }
 
     public void load(Scanner in) {
-
+        super.load(in);
+        this.end.load(in);
     }
 
     public void save(PrintWriter out) {
-
+        super.save(out);
+        out.print(" ");
+        end.save(out);
     }
 
     @Override
@@ -37,6 +42,11 @@ public class Line extends Figure {
 
     public Point getEnd(){
         return this.end;
+    }
+
+    @Override
+    public String toString() {
+        return this.letter + " " + start.toString() + " " + end.toString();
     }
 
 }

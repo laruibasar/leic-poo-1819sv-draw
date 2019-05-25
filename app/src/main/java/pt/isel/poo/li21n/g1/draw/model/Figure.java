@@ -6,21 +6,21 @@ import java.util.Scanner;
 public abstract class Figure {
 
     protected char letter;
-    protected final Point start;
+    protected Point start;
 
     protected Figure(int x, int y) {
         this.start = new Point (x, y);
     }
 
-    protected Figure(){
-        this.start = new Point();
+    protected Figure() {
+        this.start = new Point(0, 0);
     }
 
     protected char getLetter() {
         return this.letter;
     }
 
-    public Figure newInstance(char letter) {
+    public static Figure newInstance(char letter) {
         switch(letter){
             case ('L'):
                 return new Line();
@@ -33,6 +33,14 @@ public abstract class Figure {
             default:
                 return null;
         }
+    }
+
+    public void setStart(Point s) {
+        this.start = s;
+    }
+
+    public void setStart(int x, int y) {
+        this.start = new Point(x, y);
     }
 
     public Point getStart() {

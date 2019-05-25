@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -13,6 +12,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -27,10 +28,7 @@ import pt.isel.poo.li21n.g1.draw.view.DrawView;
 
 public class DrawController extends AppCompatActivity {
 
-    final static private String FILE = "drawfigures.txt";
-
-    FileOutputStream outputStream;
-
+    final static private String FILE = "draw.txt";;
     DrawModel model;
     DrawView view;
     char currentLetter;
@@ -38,7 +36,6 @@ public class DrawController extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         model = new DrawModel();
 
         /* layout for storing the buttons and radio group containers */
@@ -166,38 +163,52 @@ public class DrawController extends AppCompatActivity {
     }
 
     private void onLoad() {
-        Scanner in = new Scanner(FILE);
-        model.load(in);
-
-        // with model loaded, we need to draw the figures on DrawView
-        view.reloadModel(model);
+        Scanner in;
+        try {
+            FileInputStream is = openFileInput(FILE);
+            in = new Scanner(is);
+            model.reset();
+            model.load(in);
+            // with model loaded, we need to draw the figures on DrawView
+            view.reloadModel(model);
+            in.close();
+        } catch (FileNotFoundException e) {
+            Toast.makeText(DrawController.this,"Error open file", Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }
     }
 
     private void onSave() {
-        Log.d("DrawController", "Save");
+        PrintWriter pw;
         try {
-            outputStream = openFileOutput(FILE, Context.MODE_PRIVATE);
-
-            PrintWriter pw = new PrintWriter(outputStream);
+            FileOutputStream os = openFileOutput(FILE, Context.MODE_PRIVATE);
+            pw = new PrintWriter(os);
             model.save(pw);
-
-        } catch (Exception e) {
+        } catch (FileNotFoundException e) {
+            Toast.makeText(DrawController.this,"Error saving file", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
     }
 
     public Figure createSelectedFigure(int x, int y) {
+        Figure f;
         switch (currentLetter) {
             case 'L':
-                return new Line(x, y);
+                f = new Line(x, y);
+                break;
             case 'R':
-                return new Rect(x, y);
+                f = new Rect(x, y);
+                break;
             case 'P':
-                return new Pixel(x, y);
+                f = new Pixel(x, y);
+                break;
             case 'C':
-                return new Circle(x, y);
+                f = new Circle(x, y);
+                break;
             default:
                 return null;
         }
+        model.add(f);
+        return f;
     }
 }
